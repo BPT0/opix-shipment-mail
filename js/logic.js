@@ -38,6 +38,14 @@ function fmtDate(v) {
   const d = new Date(v + 'T00:00:00');
   return (d.getMonth() + 1) + '월 ' + d.getDate() + '일(' + '일월화수목금토'[d.getDay()] + ')';
 }
+// 'YYYY-MM-DD'가 오늘(로컬 기준) 이전 날짜인지. 오늘은 과거가 아니다.
+function isPastDate(v, now = new Date()) {
+  if (!v) return false;
+  const d = new Date(v + 'T00:00:00');
+  if (isNaN(d)) return false;
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return d < today;
+}
 // 수신인 목록 파싱: 세미콜론/줄바꿈 구분, 이메일 기준 중복 제거
 function parseRecipients(raw) {
   const entries = [], bad = [], seen = new Set();

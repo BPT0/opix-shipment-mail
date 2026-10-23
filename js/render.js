@@ -18,6 +18,8 @@ function render() {
   let ship = '';
   const SHIP_LABELS = { today_am: '금일 오전', today_pm: '금일 오후', tom_am: '명일 오전', tom_pm: '명일 오후' };
   ship = SHIP_LABELS[shipSel] || fmtDate($('shipDate').value);
+  // 지정한 날짜가 오늘보다 과거면 "배송 예정" 대신 "선 납품 진행" 문구를 쓴다
+  const shipPast = shipSel === 'date' && isPastDate($('shipDate').value);
 
   // 서비스태그 검증
   const { tokens, results } = validateTags($('tags').value, itemKey, yy);
@@ -34,7 +36,9 @@ function render() {
   const subjectParts = ['솔루션 품목 ', F(method, '전달방식'), ' 정보 공유의 건(', F(cust, '고객사명'), ', ', F(dept, '요청 영업 담당자 부서'), ')'];
   const bodyLines = [
     [F(cust, '고객사명'), ' 오픽스 ', F(ver, '오픽스 버전'), ' ', F(item && item.name1, '출고품목'), ' 아래와 같이 ', F(method && METHODS[method], '전달방식'), ' 요청하였습니다.'],
-    ['실물은 ', F(ship, '배송일자'), '중에 배송 예정입니다.'],
+    shipPast
+      ? ['실물은 ', F(ship, '배송일자'), '에 선 납품 진행하였습니다.']
+      : ['실물은 ', F(ship, '배송일자'), '중에 배송 예정입니다.'],
     ['출고오더 : 확인 부탁드립니다'],
     ['출고품목 : ', F(item && item.code, '출고품목')],
     ['출고기번 : ', F(tokens.join(', '), '서비스태그번호')],
