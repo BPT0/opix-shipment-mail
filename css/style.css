@@ -48,9 +48,9 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--brand); out
 }
 .seg input:checked + label { background: var(--brand); border-color: var(--brand); color: #fff; }
 .seg input:focus-visible + label { outline: 2px solid var(--brand); outline-offset: 2px; }
-.row { display: flex; gap: 8px; }
-.row > * { flex: 1; }
-.row > .fit { flex: 0 0 auto; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.row > * { flex: 1 1 120px; min-width: 0; }
+.row > .fit { flex: 1 1 150px; width: auto; } /* 날짜 입력은 남는 폭만 쓰고 카드 밖으로 넘치지 않게 */
 .mini {
   font: inherit; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
   border: 1px solid var(--line); background: #fff; color: var(--brand); cursor: pointer; white-space: nowrap;
