@@ -94,11 +94,18 @@
       <div class="card">
         <details class="snip" id="snipDetails">
           <summary>수신인 · 참조인 스니펫 등록</summary>
-          <p class="snip-note">Outlook 주소록에서 복사한 여러 명을 한 번에 붙여넣으세요. 구분은 세미콜론(;) 또는 줄바꿈이며, 이 PC의 브라우저에 자동 저장됩니다.<br>예) "홍길동(**부 **팀) &lt;hogkil@example.com&gt;"; "김영희(**부 **팀) &lt;younghee@example.com&gt;";</p>
+          <p class="snip-note">Outlook 주소록에서 복사한 여러 명을 한 번에 붙여넣으세요. 구분은 세미콜론(;) 또는 줄바꿈이며, 이 PC의 브라우저에 자동 저장됩니다. 아래 "자동 저장 파일"을 연결하면 브라우저를 다시 시작하거나 사이트 데이터를 지워도 파일에서 복원됩니다.<br>예) "홍길동(**부 **팀) &lt;hogkil@example.com&gt;"; "김영희(**부 **팀) &lt;younghee@example.com&gt;";</p>
           <div id="snipBox"></div>
           <div class="snip-tools">
             <button class="mini" id="snipExport" type="button">스니펫 내보내기(백업)</button>
             <button class="mini" id="snipImport" type="button">스니펫 불러오기</button>
+          </div>
+          <div class="snip-file">
+            <div class="snip-tools">
+              <button class="mini" id="snipFileBtn" type="button">자동 저장 파일 연결</button>
+              <button class="mini" id="snipFileOff" type="button" style="display:none">연결 해제</button>
+            </div>
+            <div class="snip-file-state" id="snipFileState"></div>
           </div>
         </details>
       </div>
@@ -128,6 +135,7 @@
 <script src="js/logic.js"></script>
 <script src="js/dom.js"></script>
 <script src="js/storage.js"></script>
+<script src="js/file-sync.js"></script>
 <script src="js/render.js"></script>
 <script src="js/snippets-ui.js"></script>
 <script src="js/main.js"></script>

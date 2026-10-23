@@ -63,3 +63,7 @@ $('reset').onclick = () => {
 // 스니펫 입력창은 위의 공통 input 이벤트 연결 이후에 만들어지므로(자체적으로 render 호출) 순서를 유지한다.
 initSnippets();
 render();
+
+// 저장소를 "영구 저장"으로 요청(허용되면 브라우저가 임의로 비우지 않음) + 연결된 저장 파일에서 복원
+try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) {}
+initFileSync();

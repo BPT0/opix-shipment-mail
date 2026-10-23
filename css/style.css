@@ -106,6 +106,10 @@ details.snip[open] summary { margin-bottom: 12px; }
 .snip textarea { min-height: 78px; font-size: 12px; }
 .snip .err { font-size: 12px; color: var(--bad); margin-top: 4px; word-break: break-word; }
 .snip-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.snip-file { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.snip-file-state { font-size: 12px; color: var(--ink-2); margin-top: 8px; word-break: break-all; }
+.snip-file-state.ok { color: var(--ok); }
+.snip-file-state.bad { color: var(--bad); }
 #toast {
   position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px);
   background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; font-size: 13px;
