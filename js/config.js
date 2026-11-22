@@ -12,7 +12,7 @@ const METHODS = {
 // 출고품목: name1=출고품목1, code=출고품목2, tag=서비스태그 앞 4자리(품목구분)
 const ITEMS = {
   '스탠다드':  { name1: '오픽스_스탠다드',   code: 'NOFFIX30STD',          tag: '8401' },
-  '플러스':    { name1: '오픽스_플러스',     code: '플러스아이템코드미정', tag: '8406' },
+  '플러스':    { name1: '오픽스_플러스',     code: '플러스아이템코드미정', tag: '8424' },
   '시큐어드':  { name1: '오픽스_시큐어드',   code: 'NOFFIX30SCU',          tag: '8403' },
   '시큐어드AI':{ name1: '오픽스_시큐어드_AI', code: 'NOFFIX30AI',           tag: '8404' },
   '프리미엄':  { name1: '오픽스_프리미엄',   code: 'NOFFIX30PRE',          tag: '8402' },
